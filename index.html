@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title> Front End Test</title>
+  <!-- Bootstrap File -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <!-- JQuery validatrion plugin-->
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/additional-methods.js"></script>
+  <!-- custom CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+
+<body>
+  <div class="mainNavs">
+    <nav id="topBarContainer">
+      <div class="topBar row col-lg-12 justify-content-end">
+        <a class="topBarLinks text-right" href="#">Blog</a> |
+        <a class="topBarLinks" href="#">FAQ</a> |
+        <a class="topBarLinks" href="#">1.877.7737</a> |
+        <a class="topBarLinks" href="#">Log In</a>
+      </div>
+    </nav>
+    <nav id="navBarContainer">
+      <div class="row">
+        <div class="col-sm-4">
+          <img class="logo" src="assets/images/Logo.png" alt="logo">
+        </div>
+        <div class="col-sm-8">
+          <ul id="navList" class="nav justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link" href="#">ABOUT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">SERVICES</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">RESOURCES</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">PARTNERS</a>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="getStarted btn btn-lg btn-outline-warning">GET STARTED</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>  <!-- end navs -->
+
+  <div class="container">
+    <header>Get Information</header>
+    <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+        <form name="infoForm" id=infoForm>
+          <div class="form-group">
+            <label for="nameInput">Name</label>
+            <input type="text" class="form-control" id="nameInput" name="nameInput" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="gradeSelect">Select Grade</label>
+            <select class="form-control" name="gradeSelect" id="gradeSelect">
+              <option value="">- Select a Grade -</option>
+              <option value="2">2nd Grade</option>
+              <option value="3">3rd Grade</option>
+              <option value="4">4th Grade</option>
+              <option value="5">5th Grade</option>
+            </select>
+          </div>
+          <button type="submit" name="submit" class="submit btn btn-primary">SUBMIT</button>
+        </form>
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+  </div> <!-- end container -->
+
+
+  <script type="text/javascript">
+    //font
+    (function() {
+      var font = document.createElement('script');
+      font.type = 'text/javascript';
+      font.async = true;
+      font.src = 'https://easy.myfonts.net/v2/js?sid=10336(font-family=Avenir+35+Light)&sid=10340(font-family=Avenir+85+Heavy)&sid=10342(font-family=Avenir+45+Book)&sid=10344(font-family=Avenir+65+Medium)&key=4JQVzncJeO';
+      var head = document.getElementsByTagName("head")[0];
+      head.appendChild(font);
+    })();
+
+    // form validations
+    $(function() {
+      $("form[name='infoForm']").validate({
+        // Specify validation rules
+        rules: {
+          nameInput: {
+            required: true,
+            maxlength: 40,
+            lettersonly: true
+          },
+          email: {
+            required: true,
+            email: true,
+            maxlength: 50
+          },
+          gradeSelect: {
+            required: true
+          }
+        },
+        // Specify validation error messages
+        messages: {
+          nameInput: {
+            required: "*Please enter your Name",
+            maxlength: "*name must be within 40 characters",
+            lettersonly: "*only enter letters"
+          },
+          email: {
+            required: "*Please provide a valid email",
+            maxlength: "*email must be within 50 characters"
+          }
+        },
+        // Make sure the form is submitted to the destination defined
+        // in the "action" attribute of the form when valid
+        submitHandler: function(form) {
+          var $form = $(form);
+          alert("Thank you! We will send you more information via email shortly.");
+          $("#bestFriendModal").modal("show");
+          form.submit();
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

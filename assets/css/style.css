@@ -1,0 +1,112 @@
+body {
+  background-color: #F5F7FA;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+* {
+  color: white;
+}
+
+header {
+  font-size: 36px;
+  color: #333333;
+  font-family: 'Avenir 45 Book', helvetica, sans-serif;
+  text-align: center;
+  padding: 40px;
+  font-weight: bold;
+}
+
+#topBarContainer {
+  background-color: #151E3D;
+  height: 40px;
+  width: 100%
+  font-family: Avenir;
+  font-size: 12px;
+}
+.topBar {
+  padding-top: 10px;
+}
+.topBarLinks {
+  color: #ffffff;
+  padding: 0 6px;
+  font-family: 'Avenir 45 Book', helvetica, sans-serif;
+}
+
+.topBarLinks:hover {
+  color: #ff8000;
+  text-decoration: none;
+}
+
+#navBarContainer {
+  background-color: #ffffff;
+  padding-bottom: 23px;
+}
+
+#navList {
+  padding-top: 26px;
+   padding-right: 8%;
+ }
+
+ .nav-link{
+   color: #151E3D;
+   font-family: 'Avenir 45 Book', helvetica, sans-serif;
+   font-weight: bold;
+   font-size: 15px;
+ }
+
+ .nav-link:hover {
+   color: #3A7CF6;
+   text-decoration: none;
+ }
+
+.logo {
+  width: 260px;
+  margin-left: 18%;
+  padding-top: 26px;
+}
+
+.getStarted {
+  border-radius: 0;
+  font-size: 15px;
+  margin-left: 30px;
+}
+
+.getStarted.btn-outline-warning {
+    color: #ff8000;
+    background-color: transparent;
+    background-image: none;
+    border-color: #ff8000;
+    border-width: 2px;
+}
+
+.form-control {
+  border: none;
+  border-radius: 0;
+  font-weight: 100;
+}
+
+label {
+  color: #888888;
+  font-weight: 600;
+}
+
+input[type="text"]:focus,
+select[class="form-control"]:focus,
+input[type="email"]:focus,
+.uneditable-input:focus {
+  box-shadow: 0 1px 1px #FF8000 inset, 0 0 8px #FF8000;
+  outline: 0 none;
+}
+
+.submit {
+  background-color: #3A7CF6;
+  border-color: #3A7CF6;
+}
+.submit:hover {
+  background-color: #CA4700
+}
